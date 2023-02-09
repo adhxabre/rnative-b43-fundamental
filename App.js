@@ -1,13 +1,13 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 
-import State from "./src/components/State";
+import Form from "./src/components/Form";
 
 export default function App() {
   return (
-    <View style={{ marginTop: 200 }}>
+    <View style={{ marginTop: 100 }}>
       <StatusBar />
-      <State />
+      <Form />
     </View>
   );
 }
