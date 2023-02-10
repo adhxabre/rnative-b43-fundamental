@@ -1,9 +1,15 @@
 import React from "react";
-import { Text, Box } from "native-base";
+import { Text, Box, Pressable } from "native-base";
 
-export default function Hello() {
+export default function Hello({ navigation }) {
   return (
-    <Box bg="primary.400" flex={1} alignItems="center" justifyContent="center">
+    <Box
+      bg="primary.400"
+      flex={1}
+      padding={10}
+      alignItems="center"
+      justifyContent="center"
+    >
       <Text
         color="muted.900"
         fontFamily="body"
@@ -13,6 +19,36 @@ export default function Hello() {
       >
         Life's too short
       </Text>
+
+      <Pressable
+        onPress={() => navigation.navigate("Form")}
+        style={{
+          backgroundColor: "#487EB0",
+          height: 40,
+          width: "100%",
+          alignItems: "center",
+          justifyContent: "center",
+          borderRadius: 10,
+          margin: 10,
+        }}
+      >
+        <Text>Form</Text>
+      </Pressable>
+
+      <Pressable
+        onPress={() => navigation.navigate("IncDec")}
+        style={{
+          backgroundColor: "#487EB0",
+          height: 40,
+          width: "100%",
+          alignItems: "center",
+          justifyContent: "center",
+          borderRadius: 10,
+          margin: 10,
+        }}
+      >
+        <Text>Screen Increment and Decrement</Text>
+      </Pressable>
     </Box>
   );
 }

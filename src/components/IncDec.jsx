@@ -3,18 +3,18 @@ import React, { useState } from "react";
 import { TouchableOpacity } from "react-native";
 import { Text, Box } from "native-base";
 
-export default function incDec() {
+export default function IncDec() {
   // Init State
   const [counter, setCounter] = useState(0);
 
   //Create Function Add
   function Add() {
-    return setCounter(counter + 1);
+    counter == 10 ? null : setCounter(counter + 1);
   }
 
   // Create Function Less
   function Less() {
-    return setCounter(counter - 1);
+    counter == 0 ? null : setCounter(counter - 1);
   }
 
   return (
@@ -64,6 +64,12 @@ export default function incDec() {
       >
         <Text color={{ color: "white" }}>Less</Text>
       </TouchableOpacity>
+
+      {counter == 3 ? (
+        <Text color="green.400">True</Text>
+      ) : (
+        <Text color="red.400">False</Text>
+      )}
     </Box>
   );
 }
